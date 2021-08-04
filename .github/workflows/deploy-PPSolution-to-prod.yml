@@ -30,6 +30,8 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           # Required, workflow file name or ID
           workflow: deploy-PPSolution-to-test.yml
+          run_id: ${{github.event.inputs.run_id}}
+          name: artifacts
 
     - name: 'Import the managed solution to the Prod (target) Environment'
       id: import-prod
